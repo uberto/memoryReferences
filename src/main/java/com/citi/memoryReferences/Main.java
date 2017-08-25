@@ -1,65 +1,98 @@
 package com.citi.memoryReferences;
 
 
-import java.lang.ref.PhantomReference;
-import java.lang.ref.SoftReference;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.List;
+import com.sun.istack.internal.Nullable;
+
+import java.lang.ref.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main{
 
+    public static final int HOW_MANY = 500_000;
+
     public static void main(String [] args){
 
-        //try with -XX:+UseG1GC
+        //-XX:+HeapDumpOnOutOfMemoryError -Xmx4096m
+        //try with
+        // -XX:+UnlockExperimentalVMOptions -XX:G1MaxNewSizePercent=75 -XX:G1NewSizePercent=50 -XX:+UseG1GC
+        // or with
+        //-XX:+CMSParallelRemarkEnabled, -XX:+UseConcMarkSweepGC, -XX:+UseParNewGC, -XX:ParallelGCThreads=8, -XX:SurvivorRatio=25
+
 
         System.out.println("Start!");
 
-        List<SoftReference<Heavy>> prevSoftRefs = new ArrayList<>();
-        List<WeakReference<Heavy>> prevWeakRefs = new ArrayList<>();
-        List<PhantomReference<Heavy>> prevPhanRefs = new ArrayList<>();
+        ReferenceQueue queue = new ReferenceQueue();
+
+        Set<Reference<HeavyList>> references = new HashSet<>();
 
         printMem();
         System.out.println("Press ^C to break!");
-        System.out.println("\n\nUsed mem before    After GC call");
+        System.out.println("\n\nUsed mem");
 
         long start = System.currentTimeMillis();
 
-        int t = 0;
-        while (t++ < 100) {
-
-
-            List<Heavy> lh = allocate();
-
-            for (Heavy h : lh) {
-
-//            prevSoftRefs.add(new SoftReference<>(h));
-                prevWeakRefs.add(new WeakReference<>(h));
-//                prevPhanRefs.add(new PhantomReference<>(h, null));
-
-            }
-
-
-
-            long before = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-            System.gc();
-
-
-            long after = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-            System.out.println(before + "       " + after);
-
-            if (prevPhanRefs.size() > 2000) {
-                prevPhanRefs.clear();
-                System.gc();
-
-                System.out.println("after phantom clear  " +
-                        (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()));
-            }
-
-
-        }
-
+        allocationLoop(queue, references, 100);
         System.out.println("Total time " + (System.currentTimeMillis() - start));
+
+        int removed = removeRefs(queue, references);
+        System.out.println("Final used mem " + getUsedMem() + "    Refs removed " + removed + "   left " + references.size());
+
+
+    }
+
+    private static void allocationLoop(ReferenceQueue queue, Set<Reference<HeavyList>> references, int howManyTimes) {
+        HeavyList head = new HeavyList(0, null);
+        HeavyList oldTail = head;
+        for (int i = 0; i < howManyTimes; i++) {
+
+            HeavyList newTail = allocate(HOW_MANY, oldTail);
+
+            HeavyList curr = oldTail.next;
+            while (curr != null) {
+//                Reference reference = new SoftReference<>(curr, queue);
+                Reference reference = new WeakReference<>(curr, queue);
+//                Reference reference = new PhantomReference(curr, queue);
+                references.add(reference);
+
+                curr = curr.getNext();
+            }
+
+            deallocateHalf(head);
+
+            int removed = removeRefs(queue, references);
+
+            //  System.gc();   //uncomment this line to comparing with forced gc
+            System.out.println("used mem " + getUsedMem() + "    Refs removed " + removed + "   left " + references.size());
+
+            oldTail = newTail;
+        }
+    }
+
+    private static long getUsedMem() {
+        return Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+    }
+
+    private static int removeRefs(ReferenceQueue queue, Set<Reference<HeavyList>> references) {
+        int removed = 0;
+        while (true){
+            Reference r = queue.poll();
+            if (r == null)
+                break;
+            references.remove(r);
+            removed++;
+        }
+        ;
+        return removed;
+    }
+
+    private static void deallocateHalf(HeavyList head) {
+        HeavyList curr = head;
+
+        while(curr != null){
+            curr.dropNext();
+            curr = curr.getNext();
+        }
     }
 
     private static void printMem() {
@@ -83,24 +116,53 @@ public class Main{
 
     }
 
-    private static List<Heavy> allocate() {
+    private static HeavyList allocate(int howMany, HeavyList startFrom) {
 
-        List<Heavy> r = new ArrayList<>();
-        for (int i = 0; i < 1000; i++) {
-            r.add(new Heavy(i));
+        HeavyList curr = startFrom;
+        for (int i = 0; i < howMany; i++) {
+            curr = new HeavyList(i, curr);
         }
-        return r;
+        return curr;
 
     }
 
-    public static class Heavy{
+    private static int count(HeavyList list) {
 
-        byte[] mega = new byte[1_000_000];
+        HeavyList curr = list;
+        int tot = 0;
+        while (curr != null) {
+            tot++;
+            curr = curr.getNext();
+        }
+        return tot;
 
-        public Heavy(int number) {
+    }
+
+    private static class HeavyList {
+
+        byte[] mega = new byte[1000];
+        private HeavyList next = null;
+
+        public HeavyList(int number, @Nullable HeavyList prev) {
             for (int i = 0; i < mega.length; i++) {
                 mega[i] = (byte) (number % 256);
             }
+            if (prev != null) {
+                prev.next = this;
+            }
+        }
+
+        public HeavyList getNext() {
+            return next;
+        }
+
+        public HeavyList dropNext(){
+            if (next == null || next.next == null)
+                return null;
+            HeavyList res = next;
+            next = next.next;
+            return res;
         }
     }
+
 }

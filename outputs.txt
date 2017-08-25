@@ -1,0 +1,224 @@
+/usr/lib/jvm/java-8-oracle/bin/java -XX:+UseG1GC -XX:+HeapDumpOnOutOfMemoryError -Xmx4096m -javaagent:/home/uberto/idea-IC-172.3757.52/lib/idea_rt.jar=41916:/home/uberto/idea-IC-172.3757.52/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/deploy.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-oracle/jre/lib/javaws.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-oracle/jre/lib/plugin.jar:/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/home/uberto/svi/java/memoryReferences/out/production/memoryReferences com.citi.memoryReferences.Main
+Start!
+Available processors (cores): 8
+Free memory (bytes): 260083816
+Maximum memory (bytes): 4294967296
+Total memory (bytes): 262144000
+Press ^C to break!
+
+
+Used mem
+used mem 578816056    Refs removed 0   left 500000
+used mem 1145047112    Refs removed 3812   left 996188
+used mem 1649410136    Refs removed 53299   left 1442889
+used mem 2146959456    Refs removed 77260   left 1865629
+used mem 2687500320    Refs removed 936727   left 1428902
+used mem 2762997792    Refs removed 10129   left 1918773
+used mem 2988441632    Refs removed 9288   left 2409485
+used mem 3540516904    Refs removed 6683   left 2902802
+used mem 4118806560    Refs removed 1909871   left 1492931
+used mem 1205231096    Refs removed 993907   left 999024
+used mem 1718509056    Refs removed 45999   left 1453025
+used mem 2263768576    Refs removed 13782   left 1939243
+used mem 2790153728    Refs removed 259205   left 2180038
+used mem 3009424872    Refs removed 748276   left 1931762
+used mem 3101811048    Refs removed 39303   left 2392459
+used mem 3494503472    Refs removed 814216   left 2078243
+used mem 3352945712    Refs removed 1113976   left 1464267
+used mem 2968642600    Refs removed 32859   left 1931408
+used mem 3032092432    Refs removed 31740   left 2399668
+used mem 3565293320    Refs removed 968791   left 1930877
+used mem 3417968400    Refs removed 952692   left 1478185
+used mem 3047821072    Refs removed 20899   left 1957286
+used mem 3014130008    Refs removed 18105   left 2439181
+used mem 3559913824    Refs removed 802950   left 2136231
+used mem 3368546664    Refs removed 1143841   left 1492390
+used mem 3025662312    Refs removed 6889   left 1985501
+used mem 3118463328    Refs removed 8082   left 2477419
+used mem 3491235848    Refs removed 1213335   left 1764084
+used mem 3308783624    Refs removed 847505   left 1416579
+used mem 2857371664    Refs removed 82914   left 1833665
+used mem 2816477200    Refs removed 86777   left 2246888
+used mem 3218606088    Refs removed 1241446   left 1505442
+used mem 3114272784    Refs removed 574904   left 1430538
+used mem 2747271184    Refs removed 68794   left 1861744
+used mem 2885683216    Refs removed 67352   left 2294392
+used mem 3326607384    Refs removed 1285735   left 1508657
+used mem 3290955800    Refs removed 393830   left 1614827
+used mem 2965897240    Refs removed 53367   left 2061460
+used mem 3105882128    Refs removed 60205   left 2501255
+used mem 3555721232    Refs removed 1121759   left 1879496
+used mem 3389521944    Refs removed 808330   left 1571166
+used mem 2990014488    Refs removed 38635   left 2032531
+used mem 3106406424    Refs removed 40838   left 2491693
+used mem 3585081360    Refs removed 856499   left 2135194
+used mem 3424124952    Refs removed 1162602   left 1472592
+used mem 3029860376    Refs removed 25460   left 1947132
+used mem 3003123728    Refs removed 27571   left 2419561
+used mem 3476031504    Refs removed 1020504   left 1899057
+used mem 3284142096    Refs removed 912548   left 1486509
+used mem 2950694928    Refs removed 11510   left 1974999
+used mem 3040872464    Refs removed 11579   left 2463420
+used mem 3596093448    Refs removed 3190   left 2960230
+used mem 4088924168    Refs removed 1546579   left 1913651
+used mem 3884976144    Refs removed 499228   left 1914423
+used mem 3446671376    Refs removed 83356   left 2331067
+used mem 3391621128    Refs removed 83443   left 2747624
+used mem 3803711496    Refs removed 905213   left 2342411
+used mem 3540518920    Refs removed 1413956   left 1428455
+used mem 3012036616    Refs removed 69319   left 1859136
+used mem 2870478856    Refs removed 78067   left 2281069
+used mem 3289384976    Refs removed 1077809   left 1703260
+used mem 3176663048    Refs removed 761050   left 1442210
+used mem 2803369992    Refs removed 56756   left 1885454
+used mem 2904033288    Refs removed 61875   left 2323579
+used mem 3363833872    Refs removed 1284686   left 1538893
+used mem 3286763528    Refs removed 445127   left 1593766
+used mem 2933393416    Refs removed 41911   left 2051855
+used mem 3113748488    Refs removed 45286   left 2506569
+used mem 3567779864    Refs removed 1818577   left 1187992
+used mem 3495428120    Refs removed 29827   left 1658165
+used mem 3187146776    Refs removed 26923   left 2131242
+used mem 3234856976    Refs removed 28866   left 2602376
+used mem 3707764752    Refs removed 1328944   left 1773432
+used mem 3524788248    Refs removed 789203   left 1484229
+used mem 3079143448    Refs removed 15012   left 1969217
+used mem 3082289176    Refs removed 13464   left 2455753
+used mem 3570401296    Refs removed 396751   left 2559002
+used mem 3431989264    Refs removed 1560996   left 1498006
+used mem 3350200336    Refs removed 4092   left 1993914
+used mem 3077048328    Refs removed 99587   left 2394327
+used mem 3394242576    Refs removed 1433404   left 1460923
+used mem 3236956176    Refs removed 538285   left 1422638
+used mem 2788165648    Refs removed 75712   left 1846926
+used mem 2830632968    Refs removed 91154   left 2255772
+used mem 3300919312    Refs removed 1452625   left 1303147
+used mem 3256879120    Refs removed 217080   left 1586067
+used mem 3034581008    Refs removed 60639   left 2025428
+used mem 3035629584    Refs removed 85742   left 2439686
+used mem 3458729992    Refs removed 1321796   left 1617890
+used mem 3306686472    Refs removed 667246   left 1450644
+used mem 2867331096    Refs removed 46825   left 1903819
+used mem 2974285848    Refs removed 48743   left 2355076
+used mem 3428843536    Refs removed 1328729   left 1526347
+used mem 3386376216    Refs removed 376809   left 1649538
+used mem 3073900568    Refs removed 33083   left 2116455
+used mem 3198156816    Refs removed 37151   left 2579304
+used mem 3681550352    Refs removed 1287351   left 1791953
+used mem 3596615696    Refs removed 619575   left 1672378
+used mem 3189768208    Refs removed 18539   left 2153839
+used mem 3265265680    Refs removed 21533   left 2632306
+Total time 277701
+
+
+/usr/lib/jvm/java-8-oracle/bin/java -XX:+HeapDumpOnOutOfMemoryError -Xmx4096m -javaagent:/home/uberto/idea-IC-172.3757.52/lib/idea_rt.jar=38058:/home/uberto/idea-IC-172.3757.52/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/deploy.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-oracle/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-oracle/jre/lib/javaws.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-oracle/jre/lib/plugin.jar:/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/home/uberto/svi/java/memoryReferences/out/production/memoryReferences com.citi.memoryReferences.Main
+Start!
+Available processors (cores): 8
+Free memory (bytes): 249015800
+Maximum memory (bytes): 3817865216
+Total memory (bytes): 251658240
+Press ^C to break!
+
+
+Used mem
+used mem 563752152    Refs removed 0   left 500000
+used mem 858458896    Refs removed 250000   left 750000
+used mem 1390034496    Refs removed 25542   left 1224458
+used mem 1118393008    Refs removed 786958   left 937500
+used mem 1643326512    Refs removed 26814   left 1410686
+used mem 1943603712    Refs removed 263407   left 1647279
+used mem 1190970400    Refs removed 1155091   left 992188
+used mem 1600523520    Refs removed 142941   left 1349247
+used mem 1180926176    Refs removed 851200   left 998047
+used mem 1742887744    Refs removed 0   left 1498047
+used mem 2058245856    Refs removed 246369   left 1751678
+used mem 1203133112    Refs removed 1251922   left 999756
+used mem 1664537272    Refs removed 93699   left 1406057
+used mem 1975622776    Refs removed 250000   left 1656057
+used mem 1209611016    Refs removed 1156087   left 999970
+used mem 1591415176    Refs removed 201746   left 1298224
+used mem 1181435632    Refs removed 798231   left 999993
+used mem 1685523496    Refs removed 44424   left 1455569
+used mem 1996892328    Refs removed 249999   left 1705570
+used mem 2296284456    Refs removed 249999   left 1955571
+used mem 1219889384    Refs removed 1455571   left 1000000
+used mem 1615528784    Refs removed 188508   left 1311492
+used mem 1181465864    Refs removed 811492   left 1000000
+used mem 1709054432    Refs removed 31187   left 1468813
+used mem 2011594408    Refs removed 250000   left 1718813
+used mem 2311166760    Refs removed 250000   left 1968813
+used mem 1216790432    Refs removed 1468813   left 1000000
+used mem 1626965552    Refs removed 179859   left 1320141
+used mem 1180764736    Refs removed 820141   left 1000000
+used mem 1717390296    Refs removed 22537   left 1477463
+used mem 2020353512    Refs removed 250000   left 1727463
+used mem 2320242344    Refs removed 250000   left 1977463
+used mem 2619815080    Refs removed 250000   left 2227463
+used mem 1236399544    Refs removed 1727463   left 1000000
+used mem 1617267848    Refs removed 202660   left 1297340
+used mem 1955116784    Refs removed 234997   left 1562343
+used mem 2256086752    Refs removed 250000   left 1812343
+used mem 1206009184    Refs removed 1312343   left 1000000
+used mem 1642571192    Refs removed 117378   left 1382622
+used mem 1954104856    Refs removed 250000   left 1632622
+used mem 2287043744    Refs removed 250000   left 1882622
+used mem 1216136024    Refs removed 1382622   left 1000000
+used mem 1742741552    Refs removed 32093   left 1467907
+used mem 2056125616    Refs removed 250000   left 1717907
+used mem 2346115448    Refs removed 250000   left 1967907
+used mem 2645827064    Refs removed 250000   left 2217907
+used mem 2945418184    Refs removed 250000   left 2467907
+used mem 1261178328    Refs removed 1967907   left 1000000
+used mem 1588872832    Refs removed 244544   left 1255456
+used mem 1895261056    Refs removed 250000   left 1505456
+used mem 2194571264    Refs removed 250000   left 1755456
+used mem 2483954888    Refs removed 250000   left 2005456
+used mem 1220443576    Refs removed 1505456   left 1000000
+used mem 1605507056    Refs removed 198962   left 1301038
+used mem 1947186328    Refs removed 231314   left 1569724
+used mem 2248863040    Refs removed 249480   left 1820244
+used mem 2548599232    Refs removed 250000   left 2070244
+used mem 1225613960    Refs removed 1570244   left 1000000
+used mem 1625831280    Refs removed 151998   left 1348002
+used mem 1970292552    Refs removed 250000   left 1598002
+used mem 2388314064    Refs removed 160532   left 1937470
+used mem 2689382496    Refs removed 246632   left 2190838
+used mem 1231923952    Refs removed 1690838   left 1000000
+used mem 1683752448    Refs removed 102760   left 1397240
+used mem 1995340672    Refs removed 250000   left 1647240
+used mem 2294402632    Refs removed 250000   left 1897240
+used mem 2626081720    Refs removed 250000   left 2147240
+used mem 2955432568    Refs removed 243161   left 2404079
+used mem 1244582816    Refs removed 1904079   left 1000000
+used mem 1710436504    Refs removed 89515   left 1410485
+used mem 2023042264    Refs removed 250000   left 1660485
+used mem 2321771152    Refs removed 250000   left 1910485
+used mem 2655666416    Refs removed 250000   left 2160485
+used mem 2999115056    Refs removed 229922   left 2430563
+used mem 1245183488    Refs removed 1930563   left 1000000
+used mem 1725028992    Refs removed 76278   left 1423722
+used mem 2038511360    Refs removed 250000   left 1673722
+used mem 2338206592    Refs removed 250000   left 1923722
+used mem 2673160624    Refs removed 250000   left 2173722
+used mem 1235774760    Refs removed 1673722   left 1000000
+used mem 1767786856    Refs removed 27021   left 1472979
+used mem 2072137408    Refs removed 250000   left 1722979
+used mem 2371676992    Refs removed 250000   left 1972979
+used mem 2671462336    Refs removed 250000   left 2222979
+used mem 2971100224    Refs removed 250000   left 2472979
+used mem 1253561728    Refs removed 1972979   left 1000000
+used mem 1799728672    Refs removed 13784   left 1486216
+used mem 2113890912    Refs removed 250000   left 1736216
+used mem 2403667936    Refs removed 250000   left 1986216
+used mem 2703002720    Refs removed 250000   left 2236216
+used mem 3002607840    Refs removed 250000   left 2486216
+used mem 1253444216    Refs removed 1986216   left 1000000
+used mem 1814201056    Refs removed 548   left 1499452
+used mem 2132156352    Refs removed 246892   left 1752560
+used mem 2431745088    Refs removed 250000   left 2002560
+used mem 2722005256    Refs removed 250000   left 2252560
+used mem 3021561224    Refs removed 250000   left 2502560
+used mem 1261584416    Refs removed 2002560   left 1000000
+used mem 1806308512    Refs removed 43809   left 1456191
+used mem 2129022352    Refs removed 246666   left 1709525
+Total time 91416
