@@ -1,9 +1,11 @@
-package com.citi.memoryReferences;
+package com.gamasoft.memoryReferences;
 
 
 import com.sun.istack.internal.Nullable;
 
-import java.lang.ref.*;
+import java.lang.ref.Reference;
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.WeakReference;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -35,7 +37,9 @@ public class Main{
         allocationLoop(queue, references, 100);
         System.out.println("Total time " + (System.currentTimeMillis() - start));
 
+        System.gc();
         int removed = removeRefs(queue, references);
+
         System.out.println("Final used mem " + getUsedMem() + "    Refs removed " + removed + "   left " + references.size());
 
 
@@ -67,6 +71,8 @@ public class Main{
 
             oldTail = newTail;
         }
+        head = null;
+        oldTail = null;
     }
 
     private static long getUsedMem() {
