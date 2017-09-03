@@ -24,7 +24,7 @@ public class Main{
 
         System.out.println("Start!");
 
-        ReferenceQueue queue = new ReferenceQueue();
+        ReferenceQueue<HeavyList> queue = new ReferenceQueue();
 
         Set<Reference<HeavyList>> references = new HashSet<>();
 
@@ -45,7 +45,7 @@ public class Main{
 
     }
 
-    private static void allocationLoop(ReferenceQueue queue, Set<Reference<HeavyList>> references, int howManyTimes) {
+    private static void allocationLoop(ReferenceQueue<HeavyList> queue, Set<Reference<HeavyList>> references, int howManyTimes) {
         HeavyList head = new HeavyList(0, null);
         HeavyList oldTail = head;
         for (int i = 0; i < howManyTimes; i++) {
@@ -54,9 +54,9 @@ public class Main{
 
             HeavyList curr = oldTail.next;
             while (curr != null) {
-//                Reference reference = new SoftReference<>(curr, queue);
-                Reference reference = new WeakReference<>(curr, queue);
-//                Reference reference = new PhantomReference(curr, queue);
+//                Reference<HeavyList> reference = new SoftReference<>(curr, queue);
+                Reference<HeavyList> reference = new WeakReference<>(curr, queue);
+//                Reference<HeavyList> reference = new PhantomReference<>(curr, queue);
                 references.add(reference);
 
                 curr = curr.getNext();
